@@ -8,7 +8,7 @@ Genius Scraper is a Python package for scraping song data from the Genius websit
 -   Extract song information, including titles and URLs, from artist pages.
 -   Save song data to JSON files for further analysis.
 
-## Installation
+## Setup and Configuration
 
 1. Clone the repository:
 
@@ -21,6 +21,8 @@ git clone https://github.com/walidght/genius-scraper.git
 ```
 pip install -r requirements.txt
 ```
+
+3. Edit the Chrome driver path in the `configs.json` file to the correct path on your system.
 
 ## Usage
 

@@ -24,10 +24,10 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Import the `genius_scrapper` package:
+1. Import the `genius_scraper` package:
 
 ```python
-from genius_scrapper import get_artist_songs_url, extract_all_songs
+from genius_scraper import get_artist_songs_url, extract_all_songs
 ```
 
 2. Use the provided functions to fetch artist URLs and extract song data:

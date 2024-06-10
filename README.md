@@ -27,17 +27,17 @@ pip install -r requirements.txt
 1. Import the `genius_scrapper` package:
 
 ```python
-from genius_scrapper import get_artist_url, extract_all_songs
+from genius_scrapper import get_artist_songs_url, extract_all_songs
 ```
 
 2. Use the provided functions to fetch artist URLs and extract song data:
 
 ```python
-# Example usage: Fetch artist URL
-artist_url = get_artist_url('Immortal Technique')
+# Example usage: Fetch artist's songs URL
+songs_url = get_artist_songs_url('Immortal Technique')
 
 # Example usage: Extract all songs
-songs_data = extract_all_songs(artist_url)
+songs_data = extract_all_songs(songs_url)
 ```
 
 3. View the extracted data in JSON format:

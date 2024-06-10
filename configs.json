@@ -1,7 +1,7 @@
 {
     "chrome_options": {
-        "headless": true,
-        "no_sandbox": true,
+        "headless": false,
+        "no_sandbox": false,
         "disable_gpu": true,
         "disable_crash_reporter": true,
         "disable_extensions": true,

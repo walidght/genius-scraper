@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import time
 from .accept_cookies import accept_cookies
-from genius_scrapper import configs
+from genius_scraper import configs
 
 
 def extract_all_songs(url):

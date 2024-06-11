@@ -20,8 +20,8 @@ def extract_all_songs(url):
 
     accept_cookies(driver)
 
-    # Initialize an empty set to store links
-    links = set()
+    # Initialize an empty list to store links
+    links = []
 
     # Initialize variables to track the last song title
     last_song_title = ""
@@ -64,7 +64,7 @@ def extract_all_songs(url):
             By.CLASS_NAME, 'ListItem__Title-sc-122yj9e-4.nknYf')
         link = a_tag.get_attribute('href')
         title = h3_tag.text.strip()
-        links.add((title, link))
+        links.append((title, link))
 
     print(f"Retrieved {len(links)} songs")
 

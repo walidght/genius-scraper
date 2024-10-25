@@ -1,15 +1,12 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
 import time
+from genius_scraper.create_a_webdriver import create_a_webdriver
 from .accept_cookies import accept_cookies
-from genius_scraper import configs
 
 
 def extract_all_songs(url):
     # Chrome Browser setup
-    driver = webdriver.Chrome(service=Service(
-        configs.chromedriver_path), options=configs.chrome_options)
+    driver = create_a_webdriver()
 
     print("Initiating songs extraction process")
 
@@ -49,6 +46,8 @@ def extract_all_songs(url):
         # Wait to load page
         time.sleep(3)
 
+        break  # temporary break to test the code
+
     print("Finished scrolling")
 
     # Extract song links and titles after scrolling is complete
@@ -65,6 +64,13 @@ def extract_all_songs(url):
         link = a_tag.get_attribute('href')
         title = h3_tag.text.strip()
         links.append((title, link))
+
+        break  # temporary break to test the code
+
+    # Filter songs to keep only songs with the artist name in the link (to remove collaborations where he is not the main artist)
+
+    links = [{"name": title, "link": link}
+             for (title, link) in links if url.split('/')[-2].lower() in link.lower()]
 
     print(f"Retrieved {len(links)} songs")
 

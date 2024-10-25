@@ -1,14 +1,11 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from .accept_cookies import accept_cookies
-from genius_scraper import configs
+from genius_scraper.create_a_webdriver import create_a_webdriver
 
 
 def get_artist_url(query):
     # Chrome Browser setup
-    driver = webdriver.Chrome(service=Service(
-        configs.chromedriver_path), options=configs.chrome_options)
+    driver = create_a_webdriver()
 
     print("Initiating search process on Genius")
 

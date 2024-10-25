@@ -1,11 +1,10 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from genius_scraper import configs
-
 
 def create_a_webdriver():
     # Chrome Browser setup
-    driver = webdriver.Chrome(service=Service(
-        configs.chromedriver_path), options=configs.chrome_options)
+    options = webdriver.ChromeOptions()
+    options.add_argument("start-maximized") 
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
 
-    return driver
+    return webdriver.Chrome(options=options)

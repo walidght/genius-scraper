@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     all_songs = extract_all_songs(songs_link)
 
-    songs_file_path = f"./data/v3/{songs_link.split('/')[-2]}.json"
+    songs_file_path = f"./data/{songs_link.split('/')[-2]}.json"
 
     write_to_json_file(all_songs, songs_file_path)
 

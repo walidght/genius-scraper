@@ -46,8 +46,6 @@ def extract_all_songs(url):
         # Wait to load page
         time.sleep(3)
 
-        break  # temporary break to test the code
-
     print("Finished scrolling")
 
     # Extract song links and titles after scrolling is complete
@@ -64,8 +62,6 @@ def extract_all_songs(url):
         link = a_tag.get_attribute('href')
         title = h3_tag.text.strip()
         links.append((title, link))
-
-        break  # temporary break to test the code
 
     # Filter songs to keep only songs with the artist name in the link (to remove collaborations where he is not the main artist)
 

@@ -1,66 +1,36 @@
 # Genius Scraper
 
-Genius Scraper is a Python package for scraping song data from the Genius website. It provides functions to extract song information for a given artist and save the data in JSON format.
+Genius Scraper is a Python package designed for scraping song data from the Genius website. It allows users to retrieve detailed song information for a specific artist and save the data in JSON format.
 
 ## Features
 
--   Fetch artist URLs based on search queries.
--   Extract song information, including titles and URLs, from artist pages.
--   Save song data to JSON files for further analysis.
+-   Search for artist URLs using query-based searches.
+-   Extract song details, including titles and URLs, from artist pages.
+-   Save extracted song data to JSON files for analysis.
+-   Fetch song lyrics and store them in separate JSON files.
 
 ## Setup
 
 1. Clone the repository:
 
-```
-git clone https://github.com/walidght/genius-scraper.git
-```
+    ```bash
+    git clone https://github.com/walidght/genius-scraper.git
+    ```
 
-2. Install dependencies:
+2. Install the required dependencies:
 
-```
-pip install -r requirements.txt
-```
-
-3. Edit the Chrome driver path in the `configs.json` file to the correct path on your system.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
-1. Import the `genius_scraper` package:
+1. Open the terminal, navigate to the project directory, and run the main script with the artist's name as an argument:
 
-```python
-from genius_scraper import get_artist_songs_url, extract_all_songs
-```
+    ```bash
+    python main.py "kanye west"
+    ```
 
-2. Use the provided functions to fetch artist URLs and extract song data:
+## Contribution
 
-```python
-# Example usage: Fetch artist's songs URL
-songs_url = get_artist_songs_url('Immortal Technique')
-
-# Example usage: Extract all songs
-songs_data = extract_all_songs(songs_url)
-```
-
-3. View the extracted data in JSON format:
-
-```python
-import json
-print(json.dumps(songs_data, indent=4))
-```
-
-## Configuration
-
-The package configuration is stored in a JSON file named `configs.json`. You can customize the Chrome options and Chromedriver path in this file.
-
-Example `configs.json`:
-
-```json
-{
-    "chrome_options": {
-        "headless": true,
-        "disable-gpu": true
-    },
-    "chromedriver_path": "/path/to/chromedriver"
-}
-```
+Developed by @walidght. For bug reports or feature requests, please open an issue on the repository.
